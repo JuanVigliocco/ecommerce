@@ -1,0 +1,19 @@
+.nav a{
+    text-decoration:none;
+    color:inherit;
+    font-size:14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    } 
+    nav li{
+    display:inline-block;
+    width:18%;
+    padding:5px 10px;
+    background-color:#000;
+    border:1px solid #000;
+    text-align:center;
+    color:#fff;
+    }
+    nav li:hover{
+    color:rgb(227, 137, 12);
+    }
+    

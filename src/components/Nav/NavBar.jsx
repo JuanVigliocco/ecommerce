@@ -1,14 +1,16 @@
 import React from 'react'
+import estilos from './navbar.module.css';
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
     return (
-        <nav>
+        <nav className= {estilos.nav}>
             <ul>
                 <li>
                     <a href='https://google.com'>Inicio</a>
                 </li>
                 <li>
-                    <a href='https://google.com'>Produtos</a>
+                    <a href='https://google.com'>Productos</a>
                 </li>
                 <li>
                     <a href='https://google.com'>Nosotros</a>
@@ -16,7 +18,11 @@ const NavBar = () => {
                 <li>
                     <a href='https://google.com'>Contacto</a>
                 </li>
+                <li>
+                <p><CartWidget /></p>
+                </li>
             </ul>
+
         </nav>
     );
 };
