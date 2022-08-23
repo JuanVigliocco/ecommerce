@@ -1,8 +1,9 @@
 import React from 'react';
 import estilos from './main.module.css';
+import fotoPalos1 from '../../assets/img/kitgolf.jpg'
 
 
-const Main = ({ test, fecha, alumno}) => {
+const Main = ({ test, fecha, alumno,saludos, saludar}) => {
 
 
     //distintas formas
@@ -16,11 +17,13 @@ const Main = ({ test, fecha, alumno}) => {
     return (
         <main className={estilos.main}>
             <section>
-                <h2>Bienvenidos a {test}</h2>
+                <h2 onClick={saludar}>Bienvenidos a {test}</h2>
                 <p>Hoy es {fecha} de Agosto</p>
                 <h3>Choose a Plan to Join Golf Worldwide Today
 Grow your business with Worldwide Visitors!<br/>Mi nombre es {alumno.nombre}</h3>
+                <p>{saludos}</p>
             </section>
+            <img src={fotoPalos1} alt="" />
         </main>
     );
 };
