@@ -1,6 +1,6 @@
 import NavBar from '../Nav/NavBar';
 import estilos from './header.module.css';
-import logo from '../../assets/img/logopng.png'
+import logo from '../../assets/img/logo2.jpg'
 import CartWidget from '../Nav/CartWidget'
 import Button from '../Button/Button';
 const Header = () => {

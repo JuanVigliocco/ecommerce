@@ -11,12 +11,17 @@ const NavBar = () => {
 				</li>
 				<li>
 					<a href='www.google.com'>
-						PALOS
+						BEBIDAS
 					</a>
 				</li>
 				<li>
 					<a href='www.google.com'>
-						NOTICIAS
+						JUEGOS
+					</a>
+				</li>
+				<li>
+					<a href='www.google.com'>
+						KIOSCO
 					</a>
 				</li>
 				<li>

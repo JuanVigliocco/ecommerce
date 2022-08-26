@@ -27,9 +27,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <ItemListContainer saludo="Encontrá Palos en BUKE GOLF! nuestras increíbles ofertas y promociones. Descubrí la mejor forma de comprar online."/>
+      <ItemListContainer saludo="Una Previa es una reunión entre amigos para tomar algo antes de irse al boliche o a una fiesta."/>
       <Main     
-        test="GOLFCLUB PREMIUM" 
+        test="PreviApp" 
         fecha={23} 
         alumno={{ nombre: 'Juan'}}
         saludos={saludos}
