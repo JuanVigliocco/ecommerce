@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
-const ItemCount = ({stock, initial, onAdd}) =>{
+
+export const Count = ({stock, initial, onAdd}) =>{
     //const estado= useState(0);
     //const miVariableDeEstado= estado [0]    
     //const miVariableDeEstado= estado [1];
@@ -24,8 +25,12 @@ const ItemCount = ({stock, initial, onAdd}) =>{
 
         }
 
-    }
+    };
 
+   // const onAdd= () =>{
+    //    console.log(`Ha agregado un nuevo producto a su carrito`);
+   //     alert(`Ha agregado un nuevo producto a su carrito`);
+   //   }
     
 
     return(
@@ -39,4 +44,3 @@ const ItemCount = ({stock, initial, onAdd}) =>{
 
 }
 
-export default ItemCount

@@ -1,9 +1,8 @@
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/footerweb';
-import ItemListContainer from './components/ItemlistContainer/Item.list.container';
-import ItemCount from './components/Counter/ItemCount';
-
+import { ItemListContainer } from './components/ItemlistContainer/ItemListContainer';
+import { Item } from './components/Card/Item';
 
 
 
@@ -15,10 +14,6 @@ const App = () => {
     console.log("hola");
   }
 
-  const onAdd= () =>{
-    console.log(`Ha agregado un nuevo producto a su carrito`);
-    alert(`Ha agregado un nuevo producto a su carrito`);
-  }
 
 
 
@@ -27,20 +22,15 @@ const App = () => {
   return (
     <>
       <Header />
-      <ItemListContainer saludo="Una Previa es una reunión entre amigos para tomar algo antes de irse al boliche o a una fiesta."/>
+      <ItemListContainer/>
       <Main     
         test="PreviApp" 
         fecha={23} 
         alumno={{ nombre: 'Juan'}}
         saludos={saludos}
         saludar={saludar} 
+        item={Item}
       />
-      <ItemCount
-      stock={10}
-      initial={1}
-      onAdd={onAdd}     
-      />
-
       <Footer />
     </>
   )
