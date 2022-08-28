@@ -29,6 +29,7 @@ const NavBar = () => {
 						CONTACTO
 					</a>
 				</li>
+				
 			</ul>
 	</nav>
 	)

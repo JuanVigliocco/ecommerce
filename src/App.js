@@ -22,7 +22,6 @@ const App = () => {
   return (
     <>
       <Header />
-      <ItemListContainer/>
       <Main     
         test="PreviApp" 
         fecha={23} 
@@ -31,6 +30,7 @@ const App = () => {
         saludar={saludar} 
         item={Item}
       />
+      <ItemListContainer/>
       <Footer />
     </>
   )

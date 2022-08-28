@@ -35,8 +35,8 @@ export const Count = ({stock, initial, onAdd}) =>{
 
     return(
         <div>
-            <button onClick={()=>sumar(1)}>+</button>
             <button onClick={()=>restar(1)}>-</button>
+            <button onClick={()=>sumar(1)}>+</button>
             <p>Cantidad: {count}</p>
             <button onClick={onAdd} disabled={count === 0 } >Agregar al Carrito</button>
         </div>

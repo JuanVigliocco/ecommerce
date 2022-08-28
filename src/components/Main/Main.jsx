@@ -1,9 +1,9 @@
 import React from 'react';
 import estilos from './main.module.css';
-
+import Button from '../Button/Button';
 import gente from '../../assets/img/gente2.jpg'
 
-const Main = ({ test, fecha, saludar}) => {
+const Main = ({ test, saludar}) => {
 
 
     //distintas formas
@@ -18,10 +18,13 @@ const Main = ({ test, fecha, saludar}) => {
         <main className={estilos.main}>
             <div>
             <h2 onClick={saludar}>Bienvenidos a {test}</h2>
+            <div className={estilos.button}>
+            <Button value='Sign In' variant='primary'/>
+            <Button value='Log Out' variant='secondary'/>
+            </div>
             <img src={gente} class={estilos.gente} alt="" />
             </div>
             <section>
-                <p>Hoy es {fecha} de Agosto</p>
                 <h3>Todo lo que buscas para TU PREVIA<br/> </h3>
             </section>
         </main>

@@ -4,6 +4,8 @@
 	justify-content: space-evenly;
 	height: 2.5rem;
 	align-items: center;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .menu a {
@@ -16,4 +18,6 @@ a:hover {
   }
 .navigator {
 	background-color: rgb(255, 255, 255);
+	margin-top: 3rem;
+	margin-bottom: 1rem;
 }

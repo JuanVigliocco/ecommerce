@@ -6,11 +6,11 @@
 export const products = [
     {
         id:1,
-        title: 'Fernet',
+        title: 'Black Label',
         price: 1500,
         stock: 10,
         Category: 'bebidas',
-        img: 'https://i.pinimg.com/originals/6b/7f/3d/6b7f3db0cdddb5b9058131f93f8047aa.jpg',
+        img: 'https://d37orfp70tellf.cloudfront.net/wp-content/uploads/2016/08/11000554/Johnnie_Walker_Black_Labell_1_L.jpg',
     },
     {
         id:2,
@@ -44,12 +44,5 @@ export const products = [
         Category: 'bebidas',
         img: 'https://thumbs.dreamstime.com/b/ron-especial-del-anejo-del-club-de-la-habana-90068003.jpg',
     },
-    {
-        id:6,
-        title: 'Black Label',
-        price: 2000,
-        stock: 10,
-        Category: 'bebidas',
-        img: 'https://d37orfp70tellf.cloudfront.net/wp-content/uploads/2016/08/11000554/Johnnie_Walker_Black_Labell_1_L.jpg',
-    },
+
 ]
