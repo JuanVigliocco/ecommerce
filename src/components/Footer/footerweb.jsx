@@ -6,15 +6,15 @@ import facebook from '../../assets/img/facebook.png'
 
 const Footer = () => {
     return (
-    <div class="footer-distributed">
+    <div className="footer-distributed">
     <footer id={estilos.footer}>
-    <div class={estilos.footcol1}>
+    <div className={estilos.footcol1}>
     <h4 className={estilos.h4}>¿Qué es PreviApp?</h4>
-    <p className={estilos.footcol}>Una soluciones para las reuniones entre amigos para tomar algo antes de irse al boliche o a una fiesta</p>
+    <p className={estilos.footcol}>Una solución para las reuniones entre amigos para tomar algo antes de irse al boliche o a una fiesta</p>
     </div>
 
 
-    <div class={estilos.footcol2}>
+    <div className={estilos.footcol2}>
 
         <ul>
         <li><a href="www.google.com">INICIO</a></li>
@@ -26,7 +26,7 @@ const Footer = () => {
     </div>
 
 
-    <div class={estilos.footcol4}>
+    <div className={estilos.footcol4}>
         <h4>REDES SOCIALES</h4>
         <a href="http://www.whatsapp.com"><img src={whatsapp} className={estilos.redes}  alt='whatsapp'></img></a>
         <a href="http://www.instagram.com"><img src={instagram} className={estilos.redes} alt='instagram'></img></a>

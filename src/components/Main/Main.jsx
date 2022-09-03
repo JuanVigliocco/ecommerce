@@ -2,6 +2,7 @@ import React from 'react';
 import estilos from './main.module.css';
 import Button from '../Button/Button';
 import gente from '../../assets/img/gente2.jpg'
+import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer';
 
 const Main = ({ test, saludar}) => {
 
@@ -22,11 +23,12 @@ const Main = ({ test, saludar}) => {
             <Button value='Sign In' variant='primary'/>
             <Button value='Log Out' variant='secondary'/>
             </div>
-            <img src={gente} class={estilos.gente} alt="" />
+            <img src={gente} className={estilos.gente} alt="" />
             </div>
             <section>
                 <h3>Todo lo que buscas para TU PREVIA<br/> </h3>
             </section>
+            <ItemDetailContainer/>
         </main>
     );
 };

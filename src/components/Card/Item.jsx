@@ -15,11 +15,12 @@ export const Item = ({
     stock= 10
 }) =>{
     return(
+        
         <div className={estilos.container}>
         <div className={estilos.cardcontainer}>
             <h4>{title}</h4>
             <div>
-                <img className="" src={img} alt={`Imagen del producto ${title}`}/>
+                <img className={estilos.img} src={img} alt={`Imagen del producto ${title}`}/>
             </div>
             <p className="price">$ {price}</p>
             <p>Stock: {stock}</p>
