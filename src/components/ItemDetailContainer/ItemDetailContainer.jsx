@@ -4,13 +4,15 @@ import { products } from "../../mock/Product"
 import { useParams } from "react-router-dom"
 
 export const ItemDetailContainer = () => {
-    let { productId } = useParams();
+    let { id } = useParams();
+    const idProdbynerico = Number(id)
     const [item, setItem] = useState({});
   
+
     useEffect(() => {
     const getItem = new Promise(resolve => {
         setTimeout(() => {
-        resolve(products.find(product => productId === product.id));
+        resolve(products.find((prod) => prod.id === idProdbynerico));
         }, 2000);
         });
 
@@ -21,7 +23,7 @@ export const ItemDetailContainer = () => {
         .catch(error => {
         console.log('error', error)
         })
-    }, [productId]);
+    }, [idProdbynerico]);
 
     return (
         <ItemDetail item={item} />

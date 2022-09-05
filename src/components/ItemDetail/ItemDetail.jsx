@@ -8,12 +8,13 @@ export const ItemDetail = ({item}) => {
     return (
         <div className={estilos.container}>
         <div className={estilos.cardcontainer}>
-            <span>{item.title}</span>
+            <h2>{item.title}</h2>
             <div>
                 <img className={estilos.img} src={item.img} alt=""/>
             </div>
-            <span>$ {item.price}</span>
-            <span>Stock: {item.stock}</span>
+            <p>$ {item.price}</p>
+            <p>{item.description}</p>
+            <h3>Stock: {item.stock}</h3>
             <Count  stock={10} initial={1} onAdd={onAdd}/>
         </div>
         </div>

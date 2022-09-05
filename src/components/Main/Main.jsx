@@ -31,7 +31,7 @@ const Main = ({ test, saludar}) => {
                         <h3>Todo lo que buscas para TU PREVIA<br/> </h3>
                 </section>
             <Routes>
-                <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
+                <Route path='/item/:id' element={<ItemDetailContainer/>}/>
                 <Route path='/' element={<ItemListContainer/>}/>
                 <Route path='/category/:categoryName' element={<ItemListContainer/>}/>
                     
