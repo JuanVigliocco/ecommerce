@@ -1,33 +1,34 @@
 import estilos from './navbar.module.css';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 	return (
 		<nav className={estilos.navigator}>
 			<ul className={estilos.menu}>
 				<li>
-					<a href='www.google.com'>
+					<Link to="/">
 						INICIO
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a href='www.google.com'>
+				<Link to="/category/bebidas">
 						BEBIDAS
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a href='www.google.com'>
-						JUEGOS
-					</a>
+				<Link to="/category/promos">
+						PROMOS
+					</Link>
 				</li>
 				<li>
-					<a href='www.google.com'>
+				<Link to="/category/kiosco">
 						KIOSCO
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a href='www.google.com'>
+				<Link to="/category/contacto">
 						CONTACTO
-					</a>
+					</Link>
 				</li>
 				
 			</ul>

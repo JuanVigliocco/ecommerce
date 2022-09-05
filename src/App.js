@@ -1,8 +1,8 @@
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/footerweb';
-import { ItemListContainer } from './components/ItemlistContainer/ItemListContainer';
 import { Item } from './components/Card/Item';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
@@ -20,7 +20,7 @@ const App = () => {
  
 
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <Main     
         test="PreviApp" 
@@ -30,9 +30,8 @@ const App = () => {
         saludar={saludar} 
         item={Item}
       />
-      <ItemListContainer/>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 };
 
