@@ -5,6 +5,8 @@ import gente from '../../assets/img/gente2.jpg'
 import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer';
 import { Route, Routes } from 'react-router-dom';
 import { ItemListContainer } from '../ItemlistContainer/ItemListContainer';
+import { Cart } from '../Cart/Cart';
+
 
 const Main = ({ test, saludar}) => {
 
@@ -20,12 +22,14 @@ const Main = ({ test, saludar}) => {
     return (
         <main className={estilos.main}>
                 <div>
-                    <h2 onClick={saludar}>Bienvenidos a {test}</h2>
                     <div className={estilos.button}>
                     <Button value='Sign In' variant='primary'/>
                     <Button value='Log Out' variant='secondary'/>
+                    </div>
+                <div className={estilos.contenedor}>    
+                    <h2 className={estilos.textoEncima} onClick={saludar}>Bienvenidos a {test}</h2>    
+                    <img src={gente} className={estilos.gente} alt="" />
                 </div>
-                <img src={gente} className={estilos.gente} alt="" />
                 </div>
                 <section>
                         <h3>Todo lo que buscas para TU PREVIA<br/> </h3>
@@ -33,9 +37,8 @@ const Main = ({ test, saludar}) => {
             <Routes>
                 <Route path='/item/:id' element={<ItemDetailContainer/>}/>
                 <Route path='/' element={<ItemListContainer/>}/>
-                <Route path='/category/:categoryName' element={<ItemListContainer/>}/>
-                    
-                    
+                <Route path='/category/:categoryName' element={<ItemListContainer/>}/>                  
+                <Route path='/cart' element={<Cart/>}/>    
             </Routes>
         </main>
     );

@@ -18,7 +18,7 @@ export const products = [
         title: 'Gancia',
         price: 900,
         description: "Bebida Blanca",
-        stock: 10,
+        stock: 8,
         category: 'bebidas',
         img: 'https://gobar.vteximg.com.br/arquivos/ids/156378-1000-1000/GANICA.jpg?v=636716737494030000',
     },
