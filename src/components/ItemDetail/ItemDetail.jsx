@@ -22,7 +22,9 @@ export const ItemDetail = ({item}) => {
             {cantidad === 0 ? ( 
                 <Count  stock={item.stock} initial={1} onAdd={onAdd}/>
                 ) : (
+                <button className={estilos.color}>    
                 <Link to='/cart'>Ir al Carrito</Link>
+                </button>
             )}
             </div>
             <p>{item.description}</p>
