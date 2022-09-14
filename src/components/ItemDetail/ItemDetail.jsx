@@ -14,7 +14,7 @@ export const ItemDetail = ({ id, title, price ,description, stock,img }) => {
 
     const handleOnAdd = (cantidadItem)=>{
     
-    addToCart(id, title, price, cantidadItem);
+    addToCart({id, title, price, cantidadItem});
     setCantidad(cantidadItem);
 };
     
