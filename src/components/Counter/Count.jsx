@@ -28,10 +28,6 @@ export const Count = ({stock, initial, onAdd}) =>{
         setCount(count-1);
     };
 
-    const agregarAlCarrito = () =>{
-        onAdd(count)
-    }
-
 
 
 
@@ -40,7 +36,7 @@ export const Count = ({stock, initial, onAdd}) =>{
             <button onClick={restar}>-</button>
             <button onClick={sumar}>+</button>
             <p>Cantidad: {count}</p>
-            <button onClick={()=> onAdd (agregarAlCarrito)} >Agregar al Carrito</button>
+            <button onClick={()=> onAdd (count)} >Agregar al Carrito</button>
         </div>
     )
 

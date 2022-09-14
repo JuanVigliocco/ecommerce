@@ -1,13 +1,10 @@
 import React from "react";
-import {Count} from "../Counter/Count";
+
 import estilos from "./item.module.css";
 import { Link } from "react-router-dom";
 
 
-const onAdd= () =>{
-    console.log(`Ha agregado un nuevo producto a su carrito`);
-    alert(`Ha agregado un nuevo producto a su carrito`);
-}
+
 
 
 
@@ -25,7 +22,6 @@ export const Item = ({ item }) =>{
                 <button>Ver Detalles</button>
             </Link>
             <p>Stock: {item.stock}</p>
-            <Count  stock={10} initial={1} onAdd={onAdd}/>
         </div>
         </div>
         )

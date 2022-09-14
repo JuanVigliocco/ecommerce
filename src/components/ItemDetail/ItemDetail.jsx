@@ -7,35 +7,36 @@ import { CartContext } from '../../context/CartContext'
 
 
 
-export const ItemDetail = ({ item }) => {
+export const ItemDetail = ({ id, title, price ,description, stock,img }) => {
     const [cantidad, setCantidad] = useState(0);
     const {addToCart} = useContext(CartContext);
 
 
-    const onAdd = (cantidadItem)=>{
+    const handleOnAdd = (cantidadItem)=>{
+    
+    addToCart(id, title, price, cantidadItem);
     setCantidad(cantidadItem);
-    addToCart(item, cantidadItem);
 };
     
     return (
         <div className={estilos.container}>
         <div className={estilos.cardcontainer}>
-            <h2>{item.title}</h2>
+            <h2>{title}</h2>
             <div>
-                <img className={estilos.img} src={item.img} alt=""/>
+                <img className={estilos.img} src={img} alt=""/>
             </div>
-            <p>$ {item.price}</p>
+            <p>$ {price}</p>
             <div>
             {cantidad === 0 ? ( 
-                <Count  stock={item.stock} initial={1} onAdd={onAdd}/>
+                <Count  stock={stock} initial={1} onAdd={handleOnAdd}/>
                 ) : (
                 <button className={estilos.color}>    
                 <Link to='/cart'>Ir al Carrito</Link>
                 </button>
             )}
             </div>
-            <p>{item.description}</p>
-            <h3>Stock: {item.stock}</h3>
+            <p>{description}</p>
+            <h3>Stock: {stock}</h3>
             
         </div>
         </div>
