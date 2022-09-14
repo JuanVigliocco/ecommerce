@@ -26,19 +26,21 @@ export const Count = ({stock, initial, onAdd}) =>{
     };
     const restar = ()=>{
         setCount(count-1);
+    };
+
+    const agregarAlCarrito = () =>{
+        onAdd(count)
     }
-   // const onAdd= () =>{
-    //    console.log(`Ha agregado un nuevo producto a su carrito`);
-   //     alert(`Ha agregado un nuevo producto a su carrito`);
-   //   }
-    
+
+
+
 
     return(
         <div>
-            <button onClick={()=>restar(1)}>-</button>
-            <button onClick={()=>sumar(1)}>+</button>
+            <button onClick={restar}>-</button>
+            <button onClick={sumar}>+</button>
             <p>Cantidad: {count}</p>
-            <button onClick={()=> onAdd (count)} >Agregar al Carrito</button>
+            <button onClick={()=> onAdd (agregarAlCarrito)} >Agregar al Carrito</button>
         </div>
     )
 

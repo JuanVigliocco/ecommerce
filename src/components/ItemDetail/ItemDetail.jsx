@@ -2,13 +2,20 @@ import { Count } from '../Counter/Count'
 import estilos from './itemDetail.module.css'
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
 
 
 
-export const ItemDetail = ({item}) => {
-    const [cantidad, setCantidad] = useState(0)
-    const onAdd = (cantidad)=>{
-    setCantidad(cantidad);}
+export const ItemDetail = ({ item }) => {
+    const [cantidad, setCantidad] = useState(0);
+    const {addToCart} = useContext(CartContext);
+
+
+    const onAdd = (cantidadItem)=>{
+    setCantidad(cantidadItem);
+    addToCart(item, cantidadItem);
+};
     
     return (
         <div className={estilos.container}>
