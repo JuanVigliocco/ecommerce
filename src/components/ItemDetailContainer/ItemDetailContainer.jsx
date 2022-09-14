@@ -26,7 +26,7 @@ export const ItemDetailContainer = () => {
     }, [idProdbynerico]);
 
     return (
-        <ItemDetail item={item} />
+        <ItemDetail {...item} />
     )
 }
 
