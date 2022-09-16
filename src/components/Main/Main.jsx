@@ -31,9 +31,7 @@ const Main = ({ test, saludar}) => {
                     <img src={gente} className={estilos.gente} alt="" />
                 </div>
                 </div>
-                <section>
-                        <h3>Todo lo que buscas para TU PREVIA<br/> </h3>
-                </section>
+
             <Routes>
                 <Route path='/item/:id' element={<ItemDetailContainer/>}/>
                 <Route path='/' element={<ItemListContainer/>}/>

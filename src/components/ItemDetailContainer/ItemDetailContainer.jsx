@@ -13,7 +13,7 @@ export const ItemDetailContainer = () => {
     const getItem = new Promise(resolve => {
         setTimeout(() => {
         resolve(products.find((prod) => prod.id === idProdbynerico));
-        }, 2000);
+        }, 500);
         });
 
         getItem

@@ -53,14 +53,26 @@ export const CartProvider = ({children}) =>{
         setCart(carritoFiltrado);
     };
 
-
+    //Calcular precio total
+    const totalPrice = () =>{
+        let acumulador = 0
+        cart.forEach((prod)=>{
+            acumulador += prod.price * prod.cantidadItem
+        });
+        return acumulador;
+    };
     //limpiar carrito
     const clearCart = () => {
         setCart([])
     };
 
+    const getProductQuantity = (id) =>{
+        const product = cart.find((prod)=>prod.id === id)
+        return product?.cantidadItem;
+    }
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, clearCart, eliminarProd, sumarCantidad, cantidad}}>
+        <CartContext.Provider value={{ cart, addToCart, clearCart, eliminarProd, sumarCantidad, getProductQuantity, totalPrice , cantidad}}>
             {children}
         </CartContext.Provider>
     )

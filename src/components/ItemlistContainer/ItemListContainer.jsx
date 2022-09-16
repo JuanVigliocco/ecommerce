@@ -2,11 +2,13 @@ import React, { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { products } from "../../mock/Product";
 import {ItemList} from "../../ItemList/ItemList";
+import ClipLoader from 'react-spinners/ClipLoader'
 
 
 
 export const ItemListContainer = ({saludo}) =>{
     const [productList, setProductList] = useState ([]);
+    const [isLoading, setIsloading] = useState(true)
     
 //    const parametroURL= useParams();
  //   console.log('parametroURL : ', parametroURL.categoryName);
@@ -18,25 +20,42 @@ export const ItemListContainer = ({saludo}) =>{
                 const prodFiltrados = products.filter((prod)=> prod.category === categoryName)
                 setTimeout(()=>{
                     res(categoryName ? prodFiltrados: products);
-                }, 500);
+                },700);
         
             });
         
         
             getProducts.then((products)=>{
                 setProductList(products);
+                setIsloading(false)
                 }
                 )
                 .catch((error)=>{
                     console.log('Catch: ', error);
+
                 }); 
+                return ()=>{
+                    setIsloading(true)
+                }
 
         }, [categoryName])         
         
     
     return(
         <div>
-            <ItemList productList={productList}/>
+            {
+                isLoading
+                
+                ? <ClipLoader
+                color="purple"
+                size={150}
+                
+                />
+                :
+                <ItemList productList={productList}/>
+                
+            }
+
         </div>
     );
     };

@@ -1,9 +1,10 @@
 import React, { useState } from "react"
+import { useEffect } from "react";
 
 
 
 
-export const Count = ({stock, initial, onAdd}) =>{
+export const Count = ({stock, initial = 1, onAdd}) =>{
     //const estado= useState(0);
     //const miVariableDeEstado= estado [0]    
     //const miVariableDeEstado= estado [1];
@@ -11,7 +12,9 @@ export const Count = ({stock, initial, onAdd}) =>{
     
     const [count, setCount]= useState(initial)
 
-
+    useEffect(()=>{
+        setCount(initial)
+    },[initial])
     //otra forma de hacerlo
     // const sumar = ()=> {
     // count< stock && setCount(count +1);
