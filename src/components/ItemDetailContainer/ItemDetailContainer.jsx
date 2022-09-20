@@ -1,29 +1,45 @@
 import { useEffect, useState } from "react"
 import { ItemDetail } from "../ItemDetail/ItemDetail"
-import { products } from "../../mock/Product"
+//import { products } from "../../mock/Product"
 import { useParams } from "react-router-dom"
+import { db } from "../../firebaseConfig"
+import {getDoc, doc, collection} from 'firebase/firestore'
+
 
 export const ItemDetailContainer = () => {
-    let { id } = useParams();
-    const idProdbynerico = Number(id)
+    
+
     const [item, setItem] = useState({});
-  
 
-    useEffect(() => {
-    const getItem = new Promise(resolve => {
-        setTimeout(() => {
-        resolve(products.find((prod) => prod.id === idProdbynerico));
-        }, 500);
-        });
 
-        getItem
-        .then(result => {
-        setItem(result);
+    let { id } = useParams();
+
+    useEffect(()=>{
+        const itemCollection= collection(db, "productos")
+        const ref = doc(itemCollection, id)
+        getDoc(ref)
+        .then((res)=>{
+            setItem({
+                id: res.id,
+                ...res.data()
+            })
         })
-        .catch(error => {
-        console.log('error', error)
-        })
-    }, [idProdbynerico]);
+    },[id]);
+    // useEffect(() => {
+    // const getItem = new Promise(resolve => {
+    //     setTimeout(() => {
+    //     resolve(products.find((prod) => prod.id === idProdbynerico));
+    //     }, 600);
+    //     });
+
+    //     getItem
+    //     .then(result => {
+    //     setItem(result);
+    //     })
+    //     .catch(error => {
+    //     console.log('error', error)
+    //     })
+    // }, [idProdbynerico]);
 
     return (
         <ItemDetail {...item} />
