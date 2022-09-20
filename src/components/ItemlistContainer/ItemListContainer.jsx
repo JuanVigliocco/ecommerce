@@ -10,7 +10,7 @@ import {db} from "../../firebaseConfig"
 
 export const ItemListContainer = ({saludo}) =>{
     const [productList, setProductList] = useState ([]);
-    const [isLoading, setIsloading] = useState(true)
+    const [isLoading, setIsloading] = useState(true);
     
 //    const parametroURL= useParams();
  //   console.log('parametroURL : ', parametroURL.categoryName);
@@ -19,8 +19,8 @@ export const ItemListContainer = ({saludo}) =>{
 
     useEffect(()=>{
         const itemCollection = collection(db,"productos");
-        const q = query(itemCollection,where("category","==","bebidas"))
-        getDocs(q)
+        const q = categoryName && query(itemCollection,where("category","==",categoryName))
+        getDocs(categoryName ? q : itemCollection)
         .then((res)=>{
             //console.log(res) 
             //console.log(res.docs) 
