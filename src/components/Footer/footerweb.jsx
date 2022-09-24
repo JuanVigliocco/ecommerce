@@ -14,16 +14,7 @@ const Footer = () => {
     </div>
 
 
-    <div className={estilos.footcol2}>
 
-        <ul>
-        <li><a href="www.google.com">INICIO</a></li>
-        <li><a href="www.google.com">BEBIDAS</a></li>
-        <li><a href="www.google.com">JUEGOS</a></li>
-        <li><a href="www.google.com">KIOSCO</a></li>
-        <li><a href="www.google.com">CONTACTO</a></li>
-        </ul>
-    </div>
 
 
     <div className={estilos.footcol4}>

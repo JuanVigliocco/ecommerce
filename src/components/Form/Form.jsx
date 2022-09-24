@@ -1,17 +1,41 @@
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import React from 'react'
-// import { useEffect } from 'react';
 import { useState } from 'react';
+import {db} from "../../firebaseConfig"
+import estilos from "./formCheckOut.module.css"
 
-export const Form = () => {
+export const Form = ({cart,total, clearCart, handleId}) => {
     const [nombre, setNombre] = useState ('')
     const [apellido, setApellido] = useState ('')
-    const [tamaño, setTamaño] = useState ('')
+    const [mail, setMail] = useState ('')
+    const [telefono, setTelefono] = useState ('')
+    const [calle, setCalle] = useState ('')
+    const [codigoPostal, setCodigoPostal] = useState ('')
+    const [ciudad, setCiudad] = useState ('')
+    const [provincia, setProvincia] = useState ('')
 
     const handleSubmit= (event) =>{
     event.preventDefault();
-    console.log(nombre, apellido, tamaño) // enviar la info a la base de datos
-    // console.log(event.target.elements.nombre.value);
-    // console.log(event.target.elements.apellido.value);
+    const order = {
+        buyer: {nombre: nombre, apellido: apellido, mail: mail,
+        telefono: telefono,
+        calle: calle,
+        codigoPostal: codigoPostal,
+        ciudad: ciudad,
+        provincia: provincia
+    },
+        items: cart,
+        total: total,
+        date: serverTimestamp()
+
+    };
+
+    const ordersCollection = collection(db, "orders")
+    addDoc(ordersCollection, order)
+    .then((res)=>{
+        handleId(res.id);
+        clearCart();
+    })
 };
 
     const handleChangeNombre = (event) => {
@@ -22,32 +46,41 @@ export const Form = () => {
         setApellido(event.target.value)
     };
 
-    const handleChangeTamaño = (event) => {
-        setTamaño(event.target.value)
+    const handleChangeMail = (event) => {
+        setMail(event.target.value)
     };
 
-    // useEffect(()=>{
-    //     const handleMouseMove = (e) => {
-    //         console.log ({ x: e.clientX, y: e.clientY});
-    
-    //     };
-    //     window.addEventListener('mousemove', handleMouseMove);
-    //     console.log('Creo Evento');
+    const handleChangeTelefono = (event) => {
+        setTelefono(event.target.value)
+    };
 
-    //     return () => {
-    //         //se ejecuta siempre antes que de lo de "window.addEventListener('mousemove', handleMouseMove);"
-    //         window.removeEventListener('mousemove', handleMouseMove);
-    //         console.log('Borro Evento');
-    //     };
-    // }, [])
+    const handleChangeCalle = (event) => {
+        setCalle(event.target.value)
+    };
+
+    const handleChangeCodigoPostal = (event) => {
+        setCodigoPostal(event.target.value)
+    };
+
+    const handleChangeCiudad = (event) => {
+        setCiudad(event.target.value)
+    };
+
+    const handleChangeProvincia = (event) => {
+        setProvincia(event.target.value)
+    };
+
+
+
 
 
 
 
     return (
-    <div>
+    <div className={estilos.caja}>
+    <div className={estilos.formRegister}>
         <form action='' onSubmit={handleSubmit}>
-            <input 
+            <input className={estilos.controls}
                 type="text" 
                 placeholder='Nombre...' 
                 name='nombre' 
@@ -57,7 +90,7 @@ export const Form = () => {
 
 
 
-            <input 
+            <input className={estilos.controls}
                 type="text" 
                 placeholder='Apellido...' 
                 name='apellido' 
@@ -65,13 +98,52 @@ export const Form = () => {
                 onChange={handleChangeApellido} 
             />
 
-            <select value={tamaño} onChange={handleChangeTamaño}>
-            <option value="chica">Chica 500ml</option>
-            <option value="mediana">Mediana 1.5l</option>
-            <option value="grande">Grande 2.25l</option>
-            </select>
-            <button>Enviar</button>
+            <input className={estilos.controls}
+                type="text" 
+                placeholder='Mail...' 
+                name='mail' 
+                value={mail} 
+                onChange={handleChangeMail} 
+            />
+
+            <input className={estilos.controls}
+                type="number" 
+                placeholder='Telefono...' 
+                name='Telefono' 
+                value={telefono} 
+                onChange={handleChangeTelefono} 
+            />
+            <input className={estilos.controls}
+                type="text" 
+                placeholder='Calle...' 
+                name='Calle' 
+                value={calle} 
+                onChange={handleChangeCalle} 
+            />
+            <input className={estilos.controls}
+                type="number" 
+                placeholder='Codigo Postal...' 
+                name='mail' 
+                value={codigoPostal} 
+                onChange={handleChangeCodigoPostal} 
+            />
+            <input className={estilos.controls}
+                type="text" 
+                placeholder='Ciudad...' 
+                name='Ciudad' 
+                value={ciudad} 
+                onChange={handleChangeCiudad} 
+            />
+            <input className={estilos.controls}
+                type="text" 
+                placeholder='Provincia...' 
+                name='Provincia' 
+                value={provincia} 
+                onChange={handleChangeProvincia} 
+            />
+            <button className={estilos.botons} type="submit">FINALIZAR COMPRA</button>
         </form>
+    </div>
     </div>
 )
 }

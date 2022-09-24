@@ -1,20 +1,28 @@
-import React from 'react'
-import { useContext } from 'react'
-//import { Form } from '../Form/Form'
+import React, {useContext} from 'react'
+
 import { CartContext } from '../../context/CartContext'
 import estilos from './cart.module.css'
+import { Link } from "react-router-dom";
 
 export const Cart = () => {
+
   const {cart, clearCart, eliminarProd, totalPrice} = useContext(CartContext);
   console.log(cart);
 
-  if (cart.length === 0) {
-    return <h1>Tu Carrito esta vacío</h1>;
+
+
+
+
+
+
+  if(cart.length === 0 ){
+    return (<h2 className={estilos.h1}>Aún no tenés productos, poder ir al <Link to="/">INICIO</Link> para buscar algun producto</h2>)
   }
 
   return (
+    <div>
     <div className={estilos.containerCarrito}>
-        {/* <Form/> */}
+        
         {cart.map ((prod)=>(
         <div key={prod.id} className={estilos.containerListado}>
             <div className={estilos.img}>
@@ -28,9 +36,12 @@ export const Cart = () => {
             
         </div>
 ))}
-        <h1 className={estilos.h1}>Precio Total: ${totalPrice()}</h1>
+        <h1 className={estilos.h1}>Precio total a pagar: ${totalPrice()}</h1>
         <button className={estilos.button2} onClick={clearCart}>Borrar Carrito</button>
-        <button className={estilos.button3} onClick={clearCart}>Terminar Compra</button>
+        <button className={estilos.button3}> <Link to="/formCheckOut">Terminar Compra</Link></button>
+        
+    </div>
+
     </div>
   );
 };

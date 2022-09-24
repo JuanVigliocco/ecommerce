@@ -6,17 +6,13 @@ import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer'
 import { Route, Routes } from 'react-router-dom';
 import { ItemListContainer } from '../ItemlistContainer/ItemListContainer';
 import { Cart } from '../Cart/Cart';
+import { FormCheckOut } from '../Form/FormCheckOut';
 
 
 const Main = ({ test, saludar}) => {
 
 
-    //distintas formas
-    //console.log(props); // {}
-    //console.log(props);
-    //console.log(props.alumno.nombre);
-    //const comision = props.test;
-    //const { test, fecha } = props
+
 
 
     return (
@@ -36,7 +32,8 @@ const Main = ({ test, saludar}) => {
                 <Route path='/item/:id' element={<ItemDetailContainer/>}/>
                 <Route path='/' element={<ItemListContainer/>}/>
                 <Route path='/category/:categoryName' element={<ItemListContainer/>}/>                  
-                <Route path='/cart' element={<Cart/>}/>    
+                <Route path='/cart' element={<Cart/>}/>
+                <Route path='/formCheckOut' element={<FormCheckOut/>}/>    
             </Routes>
         </main>
     );
