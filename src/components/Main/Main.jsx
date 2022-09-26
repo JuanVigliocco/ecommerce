@@ -1,7 +1,6 @@
 import React from 'react';
 import estilos from './main.module.css';
 import Button from '../Button/Button';
-import gente from '../../assets/img/gente2.jpg'
 import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer';
 import { Route, Routes } from 'react-router-dom';
 import { ItemListContainer } from '../ItemlistContainer/ItemListContainer';
@@ -9,7 +8,7 @@ import { Cart } from '../Cart/Cart';
 import { FormCheckOut } from '../Form/FormCheckOut';
 
 
-const Main = ({ test, saludar}) => {
+const Main = ({main}) => {
 
 
 
@@ -22,10 +21,6 @@ const Main = ({ test, saludar}) => {
                     <Button value='Sign In' variant='primary'/>
                     <Button value='Log Out' variant='secondary'/>
                     </div>
-                <div className={estilos.contenedor}>    
-                    <h2 className={estilos.textoEncima} onClick={saludar}>Bienvenidos a {test}</h2>    
-                    <img src={gente} className={estilos.gente} alt="" />
-                </div>
                 </div>
 
             <Routes>

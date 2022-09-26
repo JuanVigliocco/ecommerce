@@ -67,3 +67,19 @@
     background: white;
     color: green;
 }
+
+.compra{
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    
+    width: 50%;
+    background: #24303c;
+    padding: 40px;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 300px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    
+    box-shadow: 7px 13px 37px #000;
+}

@@ -4,6 +4,9 @@ import {ItemList} from "../../ItemList/ItemList";
 import ClipLoader from 'react-spinners/ClipLoader';
 import { collection, getDocs, query, where } from "firebase/firestore";
 import {db} from "../../firebaseConfig"
+import gente from '../../assets/img/gente2.jpg'
+import estilos from '../Main/main.module.css';
+
 
 
 
@@ -40,6 +43,10 @@ export const ItemListContainer = ({saludo}) =>{
 
     return(
         <div>
+        <div className={estilos.contenedor}>    
+        <img src={gente} className={estilos.gente} alt="" />
+        </div>
+        
             {
                 isLoading
                 

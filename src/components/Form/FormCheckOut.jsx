@@ -15,7 +15,7 @@ const handleId = (id) =>{
 };
 
 if (idCompra){
-    return (<h1>Gracias por tu compra. El id de tu transacción es: {idCompra}</h1>)
+    return (<h2 className={estilos.compra}>Gracias por tu compra.<br/> El id de tu transacción es: {idCompra}</h2>)
 }
 
 return(
