@@ -44,9 +44,12 @@
 .contenedor{
   filter: brightness(90%);
   position: relative;
-  display: inline-block;
+  display: flex;
+  grid-template-columns: auto;
   text-align: center;
-  width: 100%;
+  grid-template-rows: 200px auto auto;
+  justify-content: center;
+
 }
 
 .textoEncima{

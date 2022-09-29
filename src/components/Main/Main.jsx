@@ -1,6 +1,5 @@
 import React from 'react';
 import estilos from './main.module.css';
-import Button from '../Button/Button';
 import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer';
 import { Route, Routes } from 'react-router-dom';
 import { ItemListContainer } from '../ItemlistContainer/ItemListContainer';
@@ -16,12 +15,6 @@ const Main = ({main}) => {
 
     return (
         <main className={estilos.main}>
-                <div>
-                    <div className={estilos.button}>
-                    <Button value='Sign In' variant='primary'/>
-                    <Button value='Log Out' variant='secondary'/>
-                    </div>
-                </div>
 
             <Routes>
                 <Route path='/item/:id' element={<ItemDetailContainer/>}/>

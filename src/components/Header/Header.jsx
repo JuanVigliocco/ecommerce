@@ -1,6 +1,6 @@
 import NavBar from '../Nav/NavBar';
 import estilos from './header.module.css';
-import logo from '../../assets/img/logo2.jpg'
+import logo from '../../assets/img/previapp2.png'
 import bandera2 from '../../assets/img/bandera2.png'
 import { CartWidget} from '../Cart/CartWidget'
 

@@ -26,11 +26,15 @@ const NavBar = () => {
 					</Link>
 				</li>
 				<li>
-				<Link to="/category/contacto">
-						CONTACTO
-					</Link>
+				<Link to="/category/energizantes">
+						ENERGIZANTES
+				</Link>
 				</li>
-				
+				<li>
+				<Link to="/category/gaseosas">
+						GASEOSAS
+				</Link>
+				</li>
 			</ul>
 	</nav>
 	)

@@ -31,10 +31,10 @@ export const ItemDetail = ({ id, title, price ,description, stock,img }) => {
             <div>
             {cantidad === 0 ? ( 
                 <Count  stock={stock} initial={quantity} onAdd={handleOnAdd}/>
-                ) : (
-                <button className={estilos.color}>    
-                <Link to='/cart'>Ir al Carrito</Link>
-                </button>
+                ) : ( 
+                <div className={estilos.centrar}>
+                <Link to='/cart'><p className={estilos.botonCarrito}>Ir al Carrito</p></Link>
+                </div>   
             )}
             </div>
             <p>{description}</p>

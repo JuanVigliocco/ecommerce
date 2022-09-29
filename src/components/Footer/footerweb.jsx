@@ -9,8 +9,8 @@ const Footer = () => {
     <div className="footer-distributed">
     <footer id={estilos.footer}>
     <div className={estilos.footcol1}>
-    <h4 className={estilos.h4}>¿Qué es PreviApp?</h4>
-    <p className={estilos.footcol}>Una solución para las reuniones entre amigos para tomar algo antes de irse al boliche o a una fiesta</p>
+    <h1 className={estilos.h4}>¿Qué es PreviApp?</h1>
+    <p className={estilos.footcol}>Una solución para las reuniones entre amigos. Para tomar algo antes de irse al boliche o a una fiesta.</p>
     </div>
 
 
@@ -18,10 +18,16 @@ const Footer = () => {
 
 
     <div className={estilos.footcol4}>
-        <h4>REDES SOCIALES</h4>
+        <h1>REDES SOCIALES</h1>
+        <div className={estilos.zoom}>
         <a href="http://www.whatsapp.com"><img src={whatsapp} className={estilos.redes}  alt='whatsapp'></img></a>
+        </div>
+        <div className={estilos.zoom}>
         <a href="http://www.instagram.com"><img src={instagram} className={estilos.redes} alt='instagram'></img></a>
+        </div>
+        <div className={estilos.zoom}>
         <a href="http://www.facebook.com"><img src={facebook} className={estilos.redes} alt='facebook'></img></a>
+        </div>
     </div>
     
 

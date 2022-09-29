@@ -29,3 +29,20 @@
 a{
   color: black;
 }
+
+.botonCarrito{
+  background-color: rgb(255,255,255);
+  border: 1px solid #c2c2c2;
+  padding: 6px 8px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 50%;
+  margin: auto;
+  color: black;
+}
+
+.centrar{
+  justify-content: center;
+}

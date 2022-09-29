@@ -16,7 +16,7 @@ export const Cart = () => {
 
 
   if(cart.length === 0 ){
-    return (<h2 className={estilos.h1}>Aún no tenés productos, poder ir al <Link to="/">INICIO</Link> para buscar algun producto</h2>)
+    return (<h2 className={estilos.texto}>Aún no tenés productos, poder ir al <Link to="/"><p className={estilos.link}>INICIO</p></Link> para buscar algun producto.</h2>)
   }
 
   return (
