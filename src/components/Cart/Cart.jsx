@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export const Cart = () => {
 
   const {cart, clearCart, eliminarProd, totalPrice} = useContext(CartContext);
-  console.log(cart);
+
 
 
 

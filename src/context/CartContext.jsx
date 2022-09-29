@@ -22,7 +22,6 @@ export const CartProvider = ({children}) =>{
     },[cart])
 
     const addToCart = (productToAdd) => {
-        console.log(productToAdd)
         const productInCart = cart.find(product => product.id === productToAdd.id);
         if (productInCart) {
            setCart([ ...cart.filter(prod => prod.id !== productToAdd.id), { ...productToAdd, cantidadItem: productInCart.cantidadItem + productToAdd.cantidadItem}]);            
@@ -38,7 +37,6 @@ export const CartProvider = ({children}) =>{
     const sumarCantidad= () =>{
         let total=0
         cart.forEach(prod =>{
-            console.log(prod.cantidadItem)
             total += prod.cantidadItem
         })
                 return total
@@ -46,7 +44,6 @@ export const CartProvider = ({children}) =>{
 
 
     const eliminarProd= (id) => {
-        console.log(`Eliminando producto ${id}`)
         const carritoFiltrado = cart.filter((prod)=> prod.id !== id)
         setCart(carritoFiltrado);
     };
