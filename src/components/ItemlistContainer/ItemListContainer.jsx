@@ -44,8 +44,11 @@ export const ItemListContainer = ({saludo}) =>{
 
     return(
         <div>
-        <div className={estilos.contenedor}>    
-        <img src={gente} className={estilos.gente} alt="" />
+        <div className={estilos.contenedor}>
+        {
+            !categoryName && <img src={gente} className={estilos.gente} alt="" />
+        }   
+        
         </div>
         
             {

@@ -22,8 +22,10 @@ export const Count = ({stock, initial = 1, onAdd}) =>{
 
     };
     const restar = ()=>{
-        setCount(count-1);
-    };
+        if (count>1) {
+            setCount(count-1)
+    
+    }};
 
 
 

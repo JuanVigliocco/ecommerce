@@ -22,17 +22,17 @@ export const CartProvider = ({children}) =>{
     },[cart])
 
     const addToCart = (productToAdd) => {
-        if (!isInCart(productToAdd.id)) {
-
+        console.log(productToAdd)
+        const productInCart = cart.find(product => product.id === productToAdd.id);
+        if (productInCart) {
+           setCart([ ...cart.filter(prod => prod.id !== productToAdd.id), { ...productToAdd, cantidadItem: productInCart.cantidadItem + productToAdd.cantidadItem}]);            
+        } else{
             setCart([...cart, productToAdd]);
-        } 
+        }
     };
 
 
 
-    const isInCart = (id) =>{
-        return  cart.some((prod)=> prod.id === id) 
-    };
 
 
     const sumarCantidad= () =>{
@@ -67,7 +67,7 @@ export const CartProvider = ({children}) =>{
     const getProductQuantity = (id) =>{
         const product = cart.find((prod)=>prod.id === id)
         return product?.cantidadItem;
-    }
+    };
 
     return (
         <CartContext.Provider value={{ cart, addToCart, clearCart, eliminarProd, sumarCantidad, getProductQuantity, totalPrice , cantidad}}>
